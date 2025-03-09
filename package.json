@@ -1,0 +1,19 @@
+{
+  "name": "t2js",
+  "version": "1.0.0",
+  "description": "Convert test262 tests to plain JavaScript",
+  "main": "index.js",
+  "bin": {
+    "t2js": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^11.1.0",
+    "fs-extra": "^11.2.0"
+  }
+}
