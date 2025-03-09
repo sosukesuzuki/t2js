@@ -40,14 +40,17 @@ program
       // harnessファイルの解決と結合
       let result = '';
       
-      // assert.jsをデフォルトで追加
-      const assertPath = path.join(test262Dir, 'harness/assert.js');
-      if (!await fs.pathExists(assertPath)) {
-        console.error(`Error: assert.js not found: ${assertPath}`);
-        process.exit(1);
+      // デフォルトで含めるharnessファイル
+      const defaultHarnessFiles = ['assert.js', 'sta.js'];
+      for (const harnessFile of defaultHarnessFiles) {
+        const harnessPath = path.join(test262Dir, 'harness', harnessFile);
+        if (!await fs.pathExists(harnessPath)) {
+          console.error(`Error: ${harnessFile} not found: ${harnessPath}`);
+          process.exit(1);
+        }
+        const harnessContent = await fs.readFile(harnessPath, 'utf-8');
+        result += harnessContent + '\n';
       }
-      const assertContent = await fs.readFile(assertPath, 'utf-8');
-      result += assertContent + '\n';
       
       // その他のharnessファイルの追加
       for (const include of includes) {

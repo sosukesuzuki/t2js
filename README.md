@@ -21,7 +21,9 @@ t2js test/built-ins/Array/prototype/sort/S15.4.4.11_A1.1_T1.js
 
 変換されたJavaScriptが標準出力に出力されます。このJavaScriptには以下のファイルが含まれます：
 
-1. `assert.js` (デフォルトで含まれる)
+1. デフォルトで含まれるharnessファイル
+   - `assert.js`
+   - `sta.js`
 2. テストファイルのメタデータで指定された追加のharnessファイル
 3. テストファイルの本体（メタデータを除く）
 
