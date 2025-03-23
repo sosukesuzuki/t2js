@@ -2,12 +2,6 @@
 
 test262のテストを実行可能なJavaScriptに変換するCLIツール。
 
-## インストール
-
-```bash
-npm install -g t2js
-```
-
 ## 使い方
 
 環境変数 `LOCAL_TEST262_DIR` でtest262のディレクトリを指定し、テストファイルを変換します：
